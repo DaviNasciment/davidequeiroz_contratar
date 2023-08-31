@@ -4,9 +4,9 @@ import { FaArrowLeft } from 'react-icons/fa';
 const Header = () => {
     return (
         <div className="header">
-            <div className="header-icon">
+            <a href="#" className="header-icon">
                 <FaArrowLeft />
-            </div>
+            </a>
             <div className="header-title">
                 Contratar
             </div>
