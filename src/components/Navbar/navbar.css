@@ -20,7 +20,11 @@
     flex-direction: column;
     align-items: center;
 
-    font-size: 14;
+    font-size: 14px;
     font-weight: 600;
     color: #737a79;
+}
+
+.navbar-item span {
+    margin-top: 4px;
 }
