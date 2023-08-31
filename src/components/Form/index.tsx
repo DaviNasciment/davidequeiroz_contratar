@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './form.css'
 
+const navbarSelects = [
+    { id: "dia", name: "dia", defaultValue: "Dia", option: { value: ["01", "02", "03"], disabled: "Dia" } },
+    { id: "horario", name: "horario", defaultValue: "Horário", option: { value: ["08:00", "09:00", "10:00"], disabled: "Horário" } }
+]
+
 const Form = () => {
-    const [values, setValues] = useState({
-        nomeDoPaciente: '',
-        dia: '',
-        horario: '',
-    });
+    const [values, setValues] = useState({});
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -31,18 +32,20 @@ const Form = () => {
                 <p>Selecione o dia e horário para o plantão.</p>
 
                 <input onChange={handleInputChange} type="text" placeholder="Nome do paciente" name="nomeDoPaciente" />
-                <select onChange={handleSelectChange} id="dia" name="dia" defaultValue="dia">
-                    <option value="dia" disabled>Dia</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                </select>
-                <select onChange={handleSelectChange} id="horario" name="horario" defaultValue="horario">
-                    <option value="horario" disabled>Horário</option>
-                    <option value="08:00">08:00</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                </select>
+                {navbarSelects.map(select => (
+                    <select
+                        key={select.id}
+                        onChange={handleSelectChange}
+                        id={select.id}
+                        name={select.name}
+                        defaultValue={select.defaultValue}
+                    >
+                        <option value={select.defaultValue} disabled>{select.option.disabled}</option>
+                        {select.option.value.map((value, index) => (
+                            <option key={index} value={value}>{value}</option>
+                        ))}
+                    </select>
+                ))}
                 <button type="submit" className="botao-continuar">Continuar</button>
                 <button className="botao-voltar">Voltar</button>
             </form>
