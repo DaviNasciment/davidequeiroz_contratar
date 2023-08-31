@@ -1,0 +1,26 @@
+.navbar {
+    position: fixed;
+    bottom: 0;
+    
+    width: 100%;
+    padding: 1.5rem 28px;
+    background: #fff;
+}
+
+.content-navbar-item {
+    margin-inline: auto;
+    max-width: 800px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 14;
+    font-weight: 600;
+    color: #737a79;
+}

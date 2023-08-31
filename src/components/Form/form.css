@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    margin-inline: auto;
+    max-width: 800px;
+    padding: 20px 28px;
+}
+
+.form p {
+    margin-bottom: 2rem;
+
+    font-weight: 600;
+    color: #737a79;
+}
+
+select {
+    padding: 20px 20px;
+    font-size: 14px;
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    background-color: #fff;
+    outline: none;
+}
+
+select {
+    color: #777777;
+}
+
+input {
+    border: 1px solid #ebebeb;
+    padding: 20px 20px;
+}
+
+input::placeholder {
+    font-size: 14px;
+}
+
+.botao-continuar {
+    background-color: #07689f;
+    color: #fff;
+
+    border-radius: 4px;
+    margin-top: 2.5rem;
+}
+
+.botao-voltar {
+    color: #07689f;
+}
